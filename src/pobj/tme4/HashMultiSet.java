@@ -1,12 +1,16 @@
 package pobj.tme4;
 
 import java.util.AbstractCollection;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.NoSuchElementException;
+import java.util.Set;
 
 
 /**
@@ -182,6 +186,25 @@ public class HashMultiSet<T> extends AbstractCollection<T> implements MultiSet<T
 		
 		
 		
+	}
+
+
+
+
+
+
+
+
+	/* (non-Javadoc)
+	 * @see pobj.tme4.MultiSet#elements()
+	 */
+	@Override
+	public List<T> elements() {
+		// TODO Auto-generated method stub
+		List<T> elements = new ArrayList(this);
+		Set<T> s = new HashSet<>(elements);
+		elements = new ArrayList(s);	
+		return elements;
 	}
 	
 	
