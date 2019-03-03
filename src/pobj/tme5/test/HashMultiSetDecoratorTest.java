@@ -1,3 +1,6 @@
+/**
+ * 
+ */
 package pobj.tme5.test;
 
 import static org.junit.Assert.*;
@@ -7,14 +10,20 @@ import org.junit.Test;
 
 import pobj.tme5.HashMultiSet;
 import pobj.tme5.MultiSet;
+import pobj.tme5.MultiSetDecorator;
 
-public class HashMultiSetTest {
+/**
+ * @author LAOUER Walid
+ *
+ */
+public class HashMultiSetDecoratorTest {
+
+MultiSet<String> m;
 	
-	private MultiSet<String> m;
-	
-	@Before
-	public void before() {
-		m = new HashMultiSet<>();
+	@Before 
+	public void createMultiSet() {
+		MultiSet<String> n = new HashMultiSet<String>();
+		m = new MultiSetDecorator<String>(n);
 	}
 	
 	@Test 
@@ -113,3 +122,4 @@ public class HashMultiSetTest {
 
 	
 }
+
